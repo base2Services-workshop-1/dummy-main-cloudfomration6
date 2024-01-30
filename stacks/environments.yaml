@@ -3,3 +3,9 @@
 # that is used to generate the cfn-sync deployment templates and deployment stacks.
 #
 ###############################################################################
+
+dev:
+  accountId: 088071013352
+  regions: 
+  - ap-southeast-2
+  - eu-central-1

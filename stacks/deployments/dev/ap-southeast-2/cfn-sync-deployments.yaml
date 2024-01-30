@@ -11,12 +11,3 @@ Parameters:
 Resources:
   InitialPlaceholder:
     Type: AWS::CloudFormation::WaitConditionHandle
-  DevS3bucketStack:
-    Type: CfnGitSync::Stack
-    Properties:
-      RepositoryOwner: "!Ref RepositoryOwner"
-      RepositoryName: "!Ref RepositoryName"
-      BranchName: main
-      StackName: dev-s3-bucket
-      StackDeploymentFile: stacks/environments/dev/ap-southeast-2/s3-bucket.stack.yaml
-      DeletionPolicy: delete

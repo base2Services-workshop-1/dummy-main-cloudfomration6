@@ -19,4 +19,4 @@ Resources:
       BranchName: main
       StackName: dev-s3-bucket
       StackDeploymentFile: stacks/environments/dev/ap-southeast-2/s3-bucket.stack.yaml
-      DeletionPolicy: retain
+      DeletionPolicy: delete

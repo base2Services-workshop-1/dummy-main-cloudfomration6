@@ -33,15 +33,4 @@ CfhighlanderTemplate do
       parameter name: 'ParentIAMRole', value: ''
     end
 
-    Component template: 'ecs-v2@0.2.3', name: 'ecs', render: Inline, config: {
-      cluster_name: '${EnvironmentName}-services',
-      execute_command_configuration: {
-        'logging' => 'DEFAULT'
-      },
-      fargate_only_cluster: true
-      } do
-      parameter name: 'ContainerInsights', value: 'disabled'
-      parameter name: 'AvailabilityZones', value: max_availability_zones
-    end
-
 end  

@@ -12,6 +12,7 @@ ip_blocks:
   base2:
     - 52.64.86.162/32
     - 54.191.24.202/32
+    - 127.0.0.1/32
 
 config_export:
   global:

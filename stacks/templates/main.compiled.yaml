@@ -1890,27 +1890,6 @@ Resources:
         Fn::GetAtt:
         - HostedZone
         - NameServers
-  EcsCluster:
-    Type: AWS::ECS::Cluster
-    Properties:
-      ClusterName:
-        Fn::Sub: "${EnvironmentName}-services"
-      ClusterSettings:
-      - Name: containerInsights
-        Value: disabled
-      Configuration:
-        ExecuteCommandConfiguration:
-          Logging: DEFAULT
-      Tags:
-      - Key: Name
-        Value:
-          Fn::Sub: "${EnvironmentName}-ecs"
-      - Key: Environment
-        Value:
-          Ref: EnvironmentName
-      - Key: EnvironmentType
-        Value:
-          Ref: EnvironmentType
 Parameters:
   MaxNatGateways:
     Type: String
@@ -1932,9 +1911,6 @@ Parameters:
     Type: String
     Default: development
     NoEcho: false
-    AllowedValues:
-    - development
-    - production
   DnsDomain:
     Type: String
     Default: ''
@@ -2088,22 +2064,6 @@ Outputs:
     Value:
       Ref: HostedZone
   dnsCfTemplateVersion:
-    Value: latest
-  EcsCluster:
-    Value:
-      Ref: EcsCluster
-    Export:
-      Name:
-        Fn::Sub: "${EnvironmentName}-ecs-EcsCluster"
-  EcsClusterArn:
-    Value:
-      Fn::GetAtt:
-      - EcsCluster
-      - Arn
-    Export:
-      Name:
-        Fn::Sub: "${EnvironmentName}-ecs-EcsClusterArn"
-  ecsCfTemplateVersion:
     Value: latest
 Conditions:
   CreateNatGatewayEIP:

@@ -1,0 +1,5 @@
+###############################################################################
+# environments.yaml contains hold AWS environment/account/region configuration 
+# that is used to generate the cfn-sync deployment templates and deployment stacks.
+#
+###############################################################################
